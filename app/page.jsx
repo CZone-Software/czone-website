@@ -133,11 +133,11 @@ export default function Home() {
             <div className="rounded-3xl bg-white p-10 shadow-lift ring-1 ring-ink/5">
               <Image
                 src="/czone-logo.png"
-                alt="CZone Software logo"
-                width={307}
-                height={379}
+                alt="CZone Software — Zoho Authorized Partner"
+                width={640}
+                height={684}
                 priority
-                className="mx-auto h-auto w-56"
+                className="mx-auto h-auto w-64"
               />
               <p className="mt-6 rounded-2xl bg-tint px-4 py-3 text-center text-sm font-semibold text-royal">
                 Zoho reselling · implementation · support
