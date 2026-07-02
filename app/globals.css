@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: #14265a;
+  --royal: #1a56d6;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  @apply font-body text-ink bg-white antialiased;
+}
+
+/* Signature: dot-halftone texture, echoing the CZ logo mark */
+.dots {
+  background-image: radial-gradient(rgba(26, 86, 214, 0.18) 1.5px, transparent 1.5px);
+  background-size: 18px 18px;
+}
+.dots-dense {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.22) 1.5px, transparent 1.5px);
+  background-size: 14px 14px;
+}
+.dots-fade {
+  -webkit-mask-image: linear-gradient(to bottom, black 30%, transparent 90%);
+  mask-image: linear-gradient(to bottom, black 30%, transparent 90%);
+}
+
+.eyebrow {
+  @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-royal;
+}
+.eyebrow::before {
+  content: "";
+  @apply inline-block h-2 w-2 rounded-full bg-amber;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--royal);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
