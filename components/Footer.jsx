@@ -50,13 +50,21 @@ export default function Footer() {
 
         <div>
           <h3 className="text-sm font-semibold uppercase tracking-wider text-white/50">Zoho Solutions</h3>
-          <ul className="mt-4 space-y-2 text-sm text-white/80">
-            <li>Zoho One</li>
-            <li>Zoho CRM</li>
-            <li>Zoho Books &amp; Finance</li>
-            <li>Zoho Desk</li>
-            <li>Zoho People &amp; Recruit</li>
-            <li>Zoho Analytics &amp; Creator</li>
+          <ul className="mt-4 grid grid-cols-2 gap-2">
+            {[
+              ["/zoho/one.svg", "Zoho One"],
+              ["/zoho/crm.svg", "Zoho CRM"],
+              ["/zoho/books.svg", "Zoho Books"],
+              ["/zoho/desk.svg", "Zoho Desk"],
+              ["/zoho/people.svg", "Zoho People"],
+              ["/zoho/recruit.svg", "Zoho Recruit"],
+              ["/zoho/analytics.svg", "Zoho Analytics"],
+              ["/zoho/creator.svg", "Zoho Creator"],
+            ].map(([src, alt]) => (
+              <li key={alt} className="flex h-9 items-center rounded-md bg-white px-2.5">
+                <Image src={src} alt={alt} width={84} height={24} className="h-5 w-auto" />
+              </li>
+            ))}
           </ul>
         </div>
 

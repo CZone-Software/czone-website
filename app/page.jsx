@@ -23,30 +23,37 @@ const pillars = [
 const solutions = [
   {
     name: "Zoho One",
+    logo: "/zoho/one.svg",
     blurb: "The all-in-one operating system for business — 55+ integrated apps under one license.",
   },
   {
     name: "Zoho CRM",
+    logo: "/zoho/crm.svg",
     blurb: "Pipeline, automation and sales insight configured around how your team actually sells.",
   },
   {
     name: "Zoho Books & Finance",
+    logo: "/zoho/books.svg",
     blurb: "Accounting, invoicing and inventory that stay in sync with the rest of your stack.",
   },
   {
     name: "Zoho Desk",
+    logo: "/zoho/desk.svg",
     blurb: "Helpdesk and customer support tooling that keeps response times short and customers loyal.",
   },
   {
     name: "Zoho People & Recruit",
+    logo: "/zoho/people.svg",
     blurb: "HR and recruitment software to hire, onboard and grow your team without the paperwork.",
   },
   {
     name: "Zoho Analytics",
+    logo: "/zoho/analytics.svg",
     blurb: "Dashboards and reporting that turn scattered data into decisions you can trust.",
   },
   {
     name: "Zoho Creator",
+    logo: "/zoho/creator.svg",
     blurb: "Custom low-code apps for the processes no off-the-shelf product was built for.",
   },
   {
@@ -177,7 +184,16 @@ export default function Home() {
                 key={s.name}
                 className="rounded-2xl bg-white/[0.06] p-6 ring-1 ring-white/10 backdrop-blur transition hover:bg-white/[0.12]"
               >
-                <h3 className="font-display text-lg font-bold text-amber">{s.name}</h3>
+                {s.logo ? (
+                  <span className="inline-flex h-10 items-center rounded-lg bg-white px-3">
+                    <Image src={s.logo} alt={`${s.name} logo`} width={96} height={28} className="h-6 w-auto" />
+                  </span>
+                ) : (
+                  <span className="inline-flex h-10 items-center rounded-lg bg-white/10 px-3 font-display text-sm font-bold text-amber ring-1 ring-white/20">
+                    API ⇄
+                  </span>
+                )}
+                <h3 className="mt-4 font-display text-lg font-bold text-amber">{s.name}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-white/75">{s.blurb}</p>
               </article>
             ))}
@@ -238,7 +254,6 @@ export default function Home() {
             </Link>
           </div>
 
-          {/* Testimonial placeholder — swap in a real client quote when available */}
           <figure className="rounded-3xl bg-white p-8 shadow-card ring-1 ring-ink/5">
             <div className="dots h-2 w-24 rounded-full" aria-hidden="true" />
             <blockquote className="mt-6 font-display text-xl font-semibold leading-snug">
@@ -246,8 +261,7 @@ export default function Home() {
               team actually uses it — that’s the difference.”
             </blockquote>
             <figcaption className="mt-6 text-sm text-ink/60">
-              {/* TODO: replace with a real client testimonial, name and company */}
-              Client name — Role, Company
+              <span className="font-semibold text-ink">Arvind</span> — President, VirtueS
             </figcaption>
           </figure>
         </div>
