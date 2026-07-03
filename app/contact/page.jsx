@@ -12,9 +12,9 @@ import Script from "next/script";
 const ZOHO_ENDPOINT = "https://crm.zoho.in/crm/WebToLeadForm";
 const ZOHO_HIDDEN = {
   xnQsjsdp:
-    "3a5053c9429c216d04e314533c2e2fbe7ac1e98da6bd108b6587b42b09657787",
+    "05583a8bd780714a2e763613485ddca65f94219d4e602e255e2bc9b0c6315d67",
   xmIwtLD:
-    "34458cc755af59d9012964c7420367a73491e3f4cc887a15f5a748b8c91aac2ee2edf6f1959a505145bed40cd5b9bc16",
+    "76a20123714a69c965529efdb23f54a76071446d94fbe07a4cef0782b57a1837ae4e810f53196e7efc502fd6c27a72ff",
   actionType: "TGVhZHM=",
   returnURL: "null",
 };
@@ -34,6 +34,7 @@ export default function Contact() {
       const fd = new FormData(formEl);
       Object.entries(ZOHO_HIDDEN).forEach(([k, v]) => fd.append(k, v));
       fd.append("zc_gad", "");
+      fd.append("Lead Source", "Website");
       fd.append("aG9uZXlwb3Q", ""); // Zoho spam honeypot — must stay empty
 
       const res = await fetch(ZOHO_ENDPOINT, {
@@ -71,7 +72,7 @@ export default function Contact() {
       <Script
         id="wf_anal"
         strategy="afterInteractive"
-        src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=8ee1d96baf06a620f6b6b65c39d45328dbd3ffcf7b520f02e3eabf0f59e0384ed04bf52481647752dddb39fa63c8f6aegid6efaf0f51e7232312b735fe4d3030dea08ce3c4979d9dbba4c84d785afe21976gide28b0bda7c2acab6414abae658ab408330e985920b71469b572d680b399a5819gid3c7dc3a7c735a45031bd25bea1cdc54255fadcce8af2f2689c8d6fce1643ed59&tw=fb9d2be0a6c62866c87dcda02cccd0985d8321bb031288de8c0d6ad2b73c2c82"
+        src="https://crm.zohopublic.in/crm/WebFormAnalyticsServeServlet?rid=ce36e9c30f79e4e91f01ba059e2a16fce55d239819a6088f1aecabfad4d90d093ac6cd10cb80093802a6116171cb4288gida6bde677cf4b40c85ba0814de3c22eb517d9a2127d564d675a6bfa2c3e42869dgid723a9020c9d789a7a2fe134bec1f9c15768b3234dee125a09ee74cfe0cdd6173gidf12c42b8389e608ba8477f4dde2cfcf20557bbebbd666329d5132d95127e5388&tw=c2d8bf41bf259e1a5a37f0acbff705e6587e5bf585f4fb1d9d3a1a831e29aaf9"
       />
 
       <section className="relative overflow-hidden bg-paper">
@@ -172,6 +173,30 @@ export default function Contact() {
                   className={inputCls}
                   placeholder="Company name"
                 />
+              </label>
+              <label className="mt-5 block text-sm font-semibold">
+                Which Zoho product are you interested in?
+                <select
+                  name="LEADCF2"
+                  defaultValue="-None-"
+                  className="mt-2 w-full rounded-xl border border-ink/15 bg-paper px-4 py-3 font-normal outline-none transition focus:border-royal"
+                >
+                  <option value="-None-">Not sure yet / multiple</option>
+                  <option>Zoho One</option>
+                  <option>Zoho CRM</option>
+                  <option>Zoho Books</option>
+                  <option>Zoho Desk</option>
+                  <option>Zoho Analytics</option>
+                  <option>Zoho Creator</option>
+                  <option>Zoho Inventory</option>
+                  <option>Zoho Mail</option>
+                  <option>Zoho Payroll</option>
+                  <option>Zoho People</option>
+                  <option>Zoho Projects</option>
+                  <option>Zoho Recruit</option>
+                  <option>Zoho SalesIQ</option>
+                  <option>Zoho Sign</option>
+                </select>
               </label>
               <label className="mt-5 block text-sm font-semibold">
                 How can we help?
