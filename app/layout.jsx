@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Bricolage_Grotesque, Public_Sans } from "next/font/google";
+import Script from "next/script";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
@@ -40,6 +41,16 @@ export default function RootLayout({ children }) {
         <Header />
         <main>{children}</main>
         <Footer />
+
+        {/* Zoho SalesIQ live chat */}
+        <Script id="zsiq-init" strategy="afterInteractive">
+          {`window.$zoho=window.$zoho||{};$zoho.salesiq=$zoho.salesiq||{ready:function(){}}`}
+        </Script>
+        <Script
+          id="zsiqscript"
+          strategy="afterInteractive"
+          src="https://salesiq.zohopublic.in/widget?wc=siq6e6621bac561027cba47768f37309dc763a3ed29a6905e1068d64603a0315473b8095fbf87b37ad1b4f80ee8f0ac7f03"
+        />
       </body>
     </html>
   );
