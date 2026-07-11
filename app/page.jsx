@@ -129,17 +129,17 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative mx-auto w-full max-w-sm">
-            <div className="rounded-3xl bg-white p-10 shadow-lift ring-1 ring-ink/5">
+          <div className="relative mx-auto w-full max-w-md">
+            <div className="overflow-hidden rounded-3xl bg-white shadow-lift ring-1 ring-ink/5">
               <Image
-                src="/czone-logo.png"
-                alt="CZone Software — Zoho Authorized Partner"
-                width={640}
-                height={684}
+                src="/czone-hero.jpg"
+                alt="CZone Software — Zoho Authorized Partner desk plaque in our Bengaluru office"
+                width={1200}
+                height={800}
                 priority
-                className="mx-auto h-auto w-64"
+                className="h-auto w-full"
               />
-              <p className="mt-6 rounded-2xl bg-tint px-4 py-3 text-center text-sm font-semibold text-royal">
+              <p className="bg-tint px-4 py-3 text-center text-sm font-semibold text-royal">
                 Zoho reselling · implementation · support
               </p>
             </div>
