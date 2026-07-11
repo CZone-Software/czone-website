@@ -15,6 +15,7 @@ export const metadata = {
 const stories = [
   {
     sector: "Real Estate — Bengaluru",
+    icon: "realestate",
     apps: ["Zoho CRM", "Zoho Sign"],
     title: "From lost site-visit leads to a 34% higher booking conversion",
     challenge:
@@ -29,6 +30,7 @@ const stories = [
   },
   {
     sector: "Manufacturing — Pune",
+    icon: "manufacturing",
     apps: ["Zoho People", "Zoho Payroll"],
     title: "Payroll for 240 factory and office staff, closed in a day instead of a week",
     challenge:
@@ -43,6 +45,7 @@ const stories = [
   },
   {
     sector: "D2C E-commerce — Mumbai",
+    icon: "ecommerce",
     apps: ["Zoho One"],
     title: "Nine disconnected tools replaced by one suite for a growing D2C brand",
     challenge:
@@ -57,6 +60,7 @@ const stories = [
   },
   {
     sector: "IT Services — Hyderabad",
+    icon: "itservices",
     apps: ["Zoho Desk", "Zoho SalesIQ"],
     title: "Support SLAs met 96% of the time for a 60-person IT services firm",
     challenge:
@@ -71,6 +75,7 @@ const stories = [
   },
   {
     sector: "Wholesale Distribution — Delhi NCR",
+    icon: "distribution",
     apps: ["Zoho Books", "Zoho Inventory"],
     title: "GST-ready books and live stock across three warehouses",
     challenge:
@@ -85,6 +90,7 @@ const stories = [
   },
   {
     sector: "Staffing & Recruitment — Chennai",
+    icon: "staffing",
     apps: ["Zoho Recruit", "Zoho People"],
     title: "Placement cycle shortened by 9 days for a specialist staffing agency",
     challenge:
@@ -98,6 +104,88 @@ const stories = [
     ],
   },
 ];
+
+
+/* Brand-styled sector illustrations (SVG, no external assets) */
+function SectorArt({ kind }) {
+  const stroke = "#F7B32B";
+  const soft = "rgba(255,255,255,0.55)";
+  const common = {
+    fill: "none",
+    strokeWidth: 5,
+    strokeLinecap: "round",
+    strokeLinejoin: "round",
+  };
+  const art = {
+    realestate: (
+      <g {...common}>
+        <path stroke={soft} d="M30 150V80l30-22 30 22v70" />
+        <path stroke={stroke} d="M78 150V60l42-30 42 30v90" />
+        <path stroke={soft} d="M20 150h150" />
+        <rect stroke={stroke} x="105" y="98" width="14" height="16" />
+        <rect stroke={soft} x="130" y="98" width="14" height="16" />
+        <rect stroke={soft} x="105" y="70" width="14" height="16" />
+        <rect stroke={stroke} x="130" y="70" width="14" height="16" />
+        <path stroke={soft} d="M42 96h14M42 118h14" />
+      </g>
+    ),
+    manufacturing: (
+      <g {...common}>
+        <path stroke={soft} d="M25 150V95l30 20V95l30 20V95l30 20v35" />
+        <path stroke={soft} d="M18 150h154" />
+        <circle stroke={stroke} cx="132" cy="58" r="20" />
+        <circle stroke={stroke} cx="132" cy="58" r="7" />
+        <path stroke={stroke} d="M132 30v-8M132 94v-8M160 58h8M96 58h8M152 38l6-6M106 84l6-6M152 78l6 6M106 32l6 6" />
+      </g>
+    ),
+    ecommerce: (
+      <g {...common}>
+        <path stroke={stroke} d="M35 45h18l16 70h64l14-52H62" />
+        <circle stroke={stroke} cx="78" cy="140" r="10" />
+        <circle stroke={stroke} cx="122" cy="140" r="10" />
+        <path stroke={soft} d="M140 32l22 12v24l-22 12-22-12V44z" />
+        <path stroke={soft} d="M118 44l22 12 22-12M140 56v24" />
+      </g>
+    ),
+    itservices: (
+      <g {...common}>
+        <path stroke={stroke} d="M55 95a45 45 0 0 1 90 0" />
+        <rect stroke={stroke} x="45" y="92" width="20" height="32" rx="8" />
+        <rect stroke={stroke} x="135" y="92" width="20" height="32" rx="8" />
+        <path stroke={soft} d="M145 124v10a18 18 0 0 1-18 18h-14" />
+        <rect stroke={soft} x="98" y="146" width="16" height="12" rx="5" />
+      </g>
+    ),
+    distribution: (
+      <g {...common}>
+        <path stroke={soft} d="M22 150V70l40-26 40 26v80" />
+        <path stroke={soft} d="M14 150h172" />
+        <rect stroke={stroke} x="42" y="112" width="26" height="26" />
+        <rect stroke={stroke} x="72" y="112" width="26" height="26" />
+        <rect stroke={stroke} x="57" y="84" width="26" height="26" />
+        <path stroke={soft} d="M128 96h44M128 116h44M128 136h30" />
+      </g>
+    ),
+    staffing: (
+      <g {...common}>
+        <circle stroke={stroke} cx="76" cy="70" r="22" />
+        <path stroke={stroke} d="M38 148c4-26 18-40 38-40s34 14 38 40" />
+        <circle stroke={soft} cx="136" cy="96" r="24" />
+        <path stroke={soft} d="M153 113l22 22" />
+      </g>
+    ),
+  };
+  return (
+    <svg
+      viewBox="0 0 200 170"
+      className="mt-8 h-36 w-auto opacity-90"
+      role="img"
+      aria-hidden="true"
+    >
+      {art[kind]}
+    </svg>
+  );
+}
 
 function AssessmentCTA({ className = "" }) {
   return (
@@ -160,6 +248,7 @@ export default function SuccessStories() {
                       </li>
                     ))}
                   </ul>
+                  <SectorArt kind={s.icon} />
                 </div>
               </div>
 
