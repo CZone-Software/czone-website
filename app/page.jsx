@@ -254,16 +254,6 @@ export default function Home() {
             </Link>
           </div>
 
-          <figure className="rounded-3xl bg-white p-8 shadow-card ring-1 ring-ink/5">
-            <div className="dots h-2 w-24 rounded-full" aria-hidden="true" />
-            <blockquote className="mt-6 font-display text-xl font-semibold leading-snug">
-              “CZone mapped our whole sales process into Zoho CRM in weeks. Our
-              team actually uses it — that’s the difference.”
-            </blockquote>
-            <figcaption className="mt-6 text-sm text-ink/60">
-              <span className="font-semibold text-ink">Arvind</span> — President, VirtueS
-            </figcaption>
-          </figure>
         </div>
       </section>
 

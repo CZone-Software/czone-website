@@ -346,23 +346,6 @@ export default function WebServicesPage() {
         </div>
       </section>
 
-      {/* ── Testimonial ── */}
-      <section className="py-24">
-        <div className="mx-auto max-w-3xl px-6 text-center">
-          <p className="mb-8 text-sm font-bold uppercase tracking-widest text-royal">
-            Client results
-          </p>
-          <figure>
-            <blockquote className="font-display text-2xl font-semibold leading-snug text-ink md:text-3xl">
-              "CZone didn't just build us a website — they gave us a platform that brings in leads every week. The SEO work alone has transformed how customers find us."
-            </blockquote>
-            <figcaption className="mt-8 text-sm text-ink/55">
-              <span className="font-semibold text-ink">Arvind</span> — President, VirtueS
-            </figcaption>
-          </figure>
-        </div>
-      </section>
-
       {/* ── CTA ── */}
       <section className="bg-ink py-24">
         <div className="mx-auto max-w-4xl px-6 text-center">
