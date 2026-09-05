@@ -5,11 +5,10 @@ import Image from "next/image";
 import { useState } from "react";
 
 const links = [
-  { href: "/services", label: "Services" },
+  { href: "/services", label: "Zoho Services" },
+  { href: "/web-services", label: "Web & Digital" },
   { href: "/success-stories", label: "Success Stories" },
   { href: "/about", label: "About" },
-  { href: "/#solutions", label: "Zoho Solutions" },
-  { href: "/#process", label: "How We Work" },
 ];
 
 export default function Header() {

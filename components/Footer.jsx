@@ -35,7 +35,8 @@ export default function Footer() {
           <ul className="mt-4 space-y-2 text-sm">
             {[
               ["Home", "/"],
-              ["Services", "/services"],
+              ["Zoho Services", "/services"],
+              ["Web & Digital", "/web-services"],
               ["Success Stories", "/success-stories"],
               ["About", "/about"],
               ["Contact", "/contact"],
